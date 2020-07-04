@@ -1,0 +1,143 @@
+/* =============================================================================
+   Layout:  Post formats
+   ========================================================================== */
+
+/**
+ * Post format link
+ */
+.entry-header .post-format-link {
+	.label-variant();
+	position: absolute;
+	top: 10px;
+	right: 0;
+}
+
+/**
+ * Format: Chat
+ */
+.chat-transcript {
+	margin: @gutter-width-small 0;
+	// Give the chat transcripts a monospace font
+	#font > .monospace(@font-size-small);
+}
+
+.chat-row {
+	margin-bottom: 10px;
+}
+
+/* The name of the soeaker */
+.chat-author {
+	color: #000;
+
+	cite {
+		.font-size(@font-size-micro);
+		font-style: normal;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-decoration: underline;
+	}
+
+	// Give the chat person different colors
+	.chat-speaker-1 & { color: @orange-dark; }
+	.chat-speaker-2 & { color: darken(@blue-dark, 5%); }
+	.chat-speaker-3 & { color: @purple; }
+	.chat-speaker-4 & { color: darken(@green, 5%); }
+	.chat-speaker-5 & { color: darken(@pink, 5%); }
+	.chat-speaker-6 & { color: @red; }
+}
+
+/* The speaker text */
+.chat-text {
+	padding-left: @gutter-width-small;
+
+	p {
+		margin-top: 10px;
+		margin-bottom: 0;
+	}
+
+	.no-speaker &,
+	.chat-speaker-0 & {
+		padding-left: 0;
+		color: lighten(@gray, 8%);
+	}
+}
+
+/**
+ * Format: Status
+ */
+.format-status .entry-header {
+	position: relative;
+	margin-bottom: @gutter-width-small;
+
+	.entry-author {
+		margin: 0;
+		.font-size(@font-size-base);
+		font-weight: normal;
+	}
+
+	.entry-date {
+		.font-size(@font-size-small);
+		font-weight: normal;
+	}
+
+	a {
+		color: @gray;
+
+		&:hover { color: @link-color-hover; }
+	}
+}
+
+/**
+ * Format: Quote
+ */
+.format-quote .entry-meta {
+	// Set z-index higher than the quotes on <blockquote>
+	position: relative;
+	z-index: 10;
+}
+
+/**
+ * Format: Aside
+ */
+.format-aside .permalink {
+	.font-size(@font-size-large);
+}
+
+
+/**
+ * Format: Link
+ */
+.format-link .entry-title:hover .meta-nav {
+	margin-left: 5px;
+	.transition(margin-left 200ms ease-in-out);
+}
+
+/**
+ * Format: Video
+ */
+.format-video .entry-header {
+	margin-bottom: (@gutter-width-small - 10px);
+}
+
+/**
+ * Format: Image
+ */
+.format-image {
+
+	.entry-media {
+		line-height: normal;
+	}
+
+	.entry-meta {
+		margin-top: (@gutter-width-small + 5px);
+		padding: @gutter-width-small;
+		#font > .shorthand(@font-size-small, normal, 1.8);
+		background: @format-image-meta-bg;
+		border-radius: 3px;
+		color: @gray;
+
+		p {
+			margin: 0;
+		}
+	}
+}

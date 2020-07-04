@@ -1,0 +1,95 @@
+/* =============================================================================
+   Layout:  Comments area
+   ========================================================================== */
+
+.comments-area {
+	margin-top: @gutter-width;
+}
+
+.comments-title {
+	.highlight-box(15px @gutter-width-small, 0);
+}
+
+/**
+ * Comments
+ */
+.comment-list {
+	.no-list-style();
+}
+
+.comment-body {
+	border-bottom: 4px double @comments-border-color;
+	padding: @gutter-width @gutter-width-small @gutter-width-small;
+	word-wrap: break-word;
+}
+
+.bypostauthor > .comment-body {
+	background-color: @highlight-bg;
+}
+
+.comment-reply-link {
+	&:extend(.btn);
+	&:extend(.btn-mini);
+}
+
+/**
+ * Comment meta
+ */
+.comment-author {
+	line-height: 1.5;
+}
+
+.comment-metadata a {
+	color: @gray;
+	.font-size(@font-size-small);
+
+	&:hover {
+		color: @link-color-hover;
+	}
+}
+
+.comment-edit-link {
+	margin-left: 10px;
+
+	&:before {
+		content: "\270D"; // ✍ icon
+		margin-right: 5px;
+	}
+}
+
+/**
+ * Closed comments
+ */
+.no-comments {
+	.highlight-box(@gutter-width, @gutter-width 0);
+	.font-size(@headings-font-size);
+	text-align: center;
+}
+
+/**
+ * Child comments
+ */
+.comment-list .children {
+	list-style: none;
+
+	.comment-body {
+		border-left: 3px solid;
+		padding-left: @gutter-width;
+	}
+
+	.depth-2 .comment-body {
+		border-left-color: #04648d;
+	}
+
+	.depth-3 .comment-body {
+		border-left-color: #ce3000;
+	}
+
+	.depth-4 .comment-body {
+		border-left-color: darken(@green, 3%);
+	}
+
+	.depth-5 .comment-body {
+		border-left-color: darken(@pink, 5%);
+	}
+}

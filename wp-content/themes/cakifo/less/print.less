@@ -1,0 +1,209 @@
+/* =============================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+
+	* {
+		background: transparent !important;
+		border-color: #000 !important;
+		border-radius: 0 !important;
+		color: #000 !important; // Black prints faster: h5bp.com/s
+		-webkit-box-shadow: none !important;
+		-moz-box-shadow: none !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	@page {
+		margin: 0.5cm;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+
+	.entry-title {
+		font-size: 18pt;
+		margin: 0;
+	}
+
+	/**
+	 * Insert page breaks before the sidebar and comments
+	 */
+	.sidebar-primary,
+	.comments-area {
+		page-break-before: always;
+	}
+
+	/**
+	 * Show links
+	 */
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	.entry-content a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	/**
+	 * Don't show links for javascript/internal links
+	 */
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
+
+	/**
+	 * Code and quotes
+	 */
+	pre,
+	blockquote {
+		page-break-inside: avoid;
+	}
+
+	pre {
+		border: 1px solid #999;
+	}
+
+	/**
+	 * Tables, images and lists
+	 */
+	thead {
+		display: table-header-group; /* h5bp.com/t */
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	li {
+		line-height: 1.3;
+	}
+
+	/**
+	 * Hide elements
+	 */
+	// .topbar, .loop-meta-home, .secondary-navigation
+	// .post-format-link, .twitter-link,
+
+	.cakifo-slider, .pagination, .search-form, .topbar, .secondary-navigation,
+	.more-link, .post-edit-link, .entry-meta .permalink, .comments-link,
+	.comment-respond, .comment-reply-link, .comment-edit-link,
+	object, embed, video, audio, iframe[src*="youtube"],
+	{
+		display: none !important;
+	}
+
+	/**
+	 * Change layout
+	 */
+	#wrapper {
+		max-width: 100%;
+	}
+
+	.site-main,
+	.sidebar-primary,
+	.sidebar-secondary {
+		float: none;
+		width: 100%;
+	}
+
+	.layout-3c-c,
+	.layout-3c-r,
+	.layout-3c-l {
+		.site-main {
+			clear: both;
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.sidebar-primary,
+		.sidebar-secondary {
+			clear: none;
+			width: 48%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.sidebar-secondary {
+			float: right;
+		}
+	}
+
+	/**
+	 * Remove margins, paddings and borders
+	 */
+	.site-content, .site-footer, .comments-area,
+	.widget-title, .section-title, .author-profile {
+		margin: 0;
+	}
+
+	.site-content, .site-footer, .site-header, .sticky
+	.widget-title, .section-title, .breadcrumbs, .author-profile {
+		padding: 0;
+	}
+
+	.comment-body {
+		padding: 20px 20px 0;
+	}
+
+	.site-content, .site-footer, .loop-meta-home,
+	.widget-title, .comments-title, .breadcrumbs, .author-profile {
+		border: 0;
+	}
+
+	.hentry, .comment-body  {
+		border-bottom: 1px solid;
+	}
+
+	.hentry {
+		.note,
+		.alert,
+		.warning,
+		.success,
+		.download,
+		.danger,
+		.error,
+		.info {
+			padding: 5px 20px;
+			border: 1px solid;
+		}
+	}
+
+	/* Attachment pages */
+	.singular-attachment {
+		.loop-nav,
+		.byline,
+		.image-gallery {
+			display: none;
+		}
+
+		.image-info {
+			width: 100%;
+			float: none;
+
+			h3 { margin: 0; }
+		}
+	}
+}

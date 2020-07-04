@@ -1,0 +1,173 @@
+/* =============================================================================
+   Layout:  Slider
+   ========================================================================== */
+
+.cakifo-slider {
+	position: relative;
+
+	// padding, margin, border-width
+	.highlight-box(
+		(@gutter-width) @gutter-width @gutter-width-small,
+		(-@gutter-width) (-@gutter-width) @gutter-width (-@gutter-width),
+		0 0 4px
+	);
+}
+
+.flex-viewport {
+	min-height: 200px;
+}
+
+/* Slider content */
+.slide {
+	// Hide the slides before the JS is loaded to avoid page jumping
+	display: none;
+	.backface-visibility(hidden);
+
+	.thumbnail,
+	.slider-video {
+		float: left;
+		max-width: 100%;
+		margin: 0 @gutter-width 3px 3px;
+	}
+
+	.entry-title {
+		margin-top: 0;
+	}
+}
+
+/* Control navigation */
+.flex-control-nav {
+	list-style: none;
+	margin: @gutter-width-small auto 0 (-@gutter-width);
+	text-align: center;
+
+	li {
+		display: inline-block;
+		margin: 0 0 0 7px;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+/* Slider pagination */
+.flex-control-paging li {
+	a {
+		display: block;
+		.square(@slider-pagination-size);
+		background-color: @slider-pagination-color;
+		border-radius: 50%;
+		text-indent: -9999px;
+		cursor: pointer;
+		.transition(all 150ms ease);
+
+		&:hover {
+			background: @slider-pagination-color-hover;
+		}
+	}
+
+	.flex-active,
+	.flex-active:hover {
+		background: @slider-pagination-color-active;
+		cursor: default;
+		.scale(1.07);
+	}
+}
+
+.flex-pauseplay a {
+	cursor: pointer;
+}
+
+/* Next/prev buttons */
+.flex-direction-nav {
+	.no-list-style();
+
+	a {
+		position: absolute;
+		top: 40%;
+		.square(48px);
+		margin: 0;
+		background-color: #fff;
+		border-radius: 50%;
+		box-shadow: 0 0 7px fade(#000, 30%);
+		text-indent: -9999px;
+		opacity: 0.6;
+		.transition(opacity 150ms ease);
+
+		&:focus {
+			background: @slider-pagination-color;
+			outline: 0;
+		}
+
+		&:after {
+			position: absolute;
+			z-index: 10;
+			top: 0;
+			left: -2px;
+			.square(100%);
+			#font > .shorthand(38, bold, 41px);
+			color: @gray;
+			text-align: center;
+			text-indent: 0;
+		}
+
+		.cakifo-slider:hover & {
+			opacity: 1;
+		}
+	}
+
+	.flex-prev {
+		left: (-@gutter-width-small);
+
+		&:after {
+			content: "\00AB";
+		}
+	}
+
+	.flex-next {
+		right: (-@gutter-width-small);
+		right: (-@gutter-width-small);
+
+		&:after {
+			content: "\00BB";
+			left: 1px;
+		}
+	}
+
+	.flex-direction-nav .disabled {
+		cursor: default;
+		opacity: 0.3 !important;
+		filter: alpha(opacity=30);
+	}
+
+	.flex-prev:active,
+	.flex-next:active {
+		box-shadow:
+			inset 0 0 5px fade(#000, 30%),
+			0 0 7px fade(#000, 30%);
+	}
+}
+
+/* Fallback to a border for browsers without box-shadow support */
+.no-boxshadow .flex-direction-nav .flex-prev,
+.no-boxshadow .flex-direction-nav .flex-next {
+	border: 2px solid @slider-pagination-color;
+
+	&:hover {
+		border-color: @slider-pagination-color-active;
+	}
+}
+
+/* No-javaScript fallback */
+.no-js .slides-container > .slide {
+	display: none;
+
+	&:first-child {
+		display: block;
+	}
+}
+
+.no-js .slides-container > .slide:first-child {
+	display: block;
+}

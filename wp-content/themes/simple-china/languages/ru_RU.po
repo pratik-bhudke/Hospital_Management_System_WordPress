@@ -1,0 +1,187 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: china-theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-11 11:32+0600\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: tema-chinablog\n"
+"X-Poedit-SearchPath-1: chinablog\n"
+"X-Poedit-SearchPath-2: ..\n"
+
+#: ../comments.php:6
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Данный пост защищен паролем. Введите пароль, чтобы просмотреть комментарии. "
+
+#: ../comments.php:15
+msgid "Comments:"
+msgstr "Комментарий:"
+
+#: ../comments.php:23
+msgid "Says:"
+msgstr "пишет:"
+
+#: ../comments.php:43
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает модерации. "
+
+#: ../comments.php:45
+msgid "at"
+msgstr "в"
+
+#: ../comments.php:45
+msgid "edit"
+msgstr "править"
+
+#: ../comments.php:71
+msgid "Comments are closed."
+msgstr "Комментарии закрыты. "
+
+#: ../comments.php:81
+msgid "Add comments:"
+msgstr "Добавить комментарий:"
+
+#: ../comments.php:88
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+"Вы должны <a href=\"%s\">авторизоваться</a>, чтобы оставить комментарий."
+
+#: ../comments.php:95
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "Вы вошли как <a href=\"%1$s\">%2$s</a>."
+
+#: ../comments.php:95
+msgid "Log out of this account"
+msgstr "Выйти"
+
+#: ../comments.php:95
+msgid "Log out &raquo;"
+msgstr "Выйти"
+
+#: ../comments.php:100
+msgid "Name"
+msgstr "Имя"
+
+#: ../comments.php:100 ../comments.php:103
+msgid "(required)"
+msgstr "(поле, обязательное для заполнения)"
+
+#: ../comments.php:103
+msgid "Mail (will not be published)"
+msgstr "Почта (не будет опубликована на сайте)"
+
+#: ../comments.php:106
+msgid "Website"
+msgstr "Вэб-сайт"
+
+#: ../comments.php:110
+#, php-format
+msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
+msgstr ""
+"<strong>XHTML:</strong> Вы можете использовать следующие тэги: <code>%s</"
+"code>"
+
+#: ../comments.php:114
+msgid "Submit Comment"
+msgstr "Добавить комментарии"
+
+#: ../footer.php:2
+msgid "Copyright information"
+msgstr ""
+"Designed by <a href=\"http://www.alexander-tumanov.name/\">TumanoB</a>."
+
+#: ../functions.php:42
+msgid "Top primary menu"
+msgstr ""
+
+#: ../functions.php:43
+msgid "Secondary menu located on bottom of the page"
+msgstr ""
+
+#: ../header.php:39
+#, php-format
+msgid "%s RSS Feed"
+msgstr "%s RSS лента"
+
+#: ../index.php:21 ../single.php:21
+#, fuzzy
+msgid "Tags:"
+msgstr "пишет:"
+
+#: ../index.php:22
+msgid "Author:"
+msgstr "Автор:"
+
+#: ../index.php:23
+msgid "Category:"
+msgstr "Категории:"
+
+#: ../index.php:34 ../single.php:31
+msgid "&laquo; Older Entries"
+msgstr "&laquo; старые записи"
+
+#: ../index.php:35 ../single.php:32
+msgid "Newer Entries &raquo;"
+msgstr "Новые записи  &raquo;"
+
+#: ../sidebar.php:5
+msgid "Pages"
+msgstr "Страницы"
+
+#: ../sidebar.php:12
+msgid "Categories"
+msgstr "Категории"
+
+#: ../sidebar.php:19
+msgid "Links"
+msgstr "Ссылки"
+
+#~ msgid ""
+#~ "Designed by <a href=\"http://www.alexander-tumanov.name/\">TumanoB</a>. "
+#~ "Powered by <a href=\"#\">WordPress</a>"
+#~ msgstr ""
+#~ "Дизайн <a href=\"http://www.alexander-tumanov.name/\">TumanoB</a>. "
+#~ "Работает на  <a href=\"http://wordpress.org/\">WordPress</a>"
+
+#~ msgid ""
+#~ "China blog is proudly using the <a href=\"#\">KitaiTorg theme</a> "
+#~ "originally designed by <a href=\"#\">KitaiTorg.ru</a>. Powered by <a href="
+#~ "\"#\">WordPress</a>"
+#~ msgstr ""
+#~ "Дизайн <a href=\"http://www.kitaitorg.ru/ru/\">KitaiTorg.ru</a>. Работает "
+#~ "на <a href=\"http://wordpress.org\">WordPress</a>"
+
+#~ msgid "ChinaBlog - Blogs about China"
+#~ msgstr "ЧайнаБлог - Блог о Китае"
+
+#~ msgid "Home"
+#~ msgstr "Домой"
+
+#~ msgid "About"
+#~ msgstr "О блоге"
+
+#~ msgid "Elements"
+#~ msgstr "Элементы"
+
+#~ msgid "Products"
+#~ msgstr "Продукты"
+
+#~ msgid "Contact"
+#~ msgstr "Контакт"
+
+#~ msgid "One Response"
+#~ msgstr "Один комментарий"
+
+#~ msgid "to"
+#~ msgstr "на"

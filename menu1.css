@@ -1,0 +1,10 @@
+table.ph{font-size:15px;font-weight:bold;foreground:violet;text-align:center;}
+a.ph1{color:white;text-decoration:none;text-align:middle}
+a:hover{color:darkviolet}
+td.menu{background-color:brown}
+table.menu
+{
+font-size:100%;
+position:absolute;
+visibility:hidden;
+}

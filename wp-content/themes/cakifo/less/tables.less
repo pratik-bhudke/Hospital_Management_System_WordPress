@@ -1,0 +1,46 @@
+// =============================================================================
+// Tables
+// =============================================================================
+
+table {
+	width: 100%;
+	margin: 0 0 @gutter-width-small 0;
+	background-color: @table-bg;
+	box-shadow: 0 1px 2px fade(#000, 7%);
+	border-left: 1px solid @table-border-color;
+	border-right: 1px solid @table-border-color;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th,
+td {
+	padding: 8px;
+	border: 1px solid @table-border-color;
+	text-align: left;
+}
+
+tr:hover td {
+	background: @table-bg-hover;
+}
+
+thead th {
+	background: @highlight-bg;
+}
+
+th {
+	font-weight: bold;
+}
+
+// tfoot
+tfoot td {
+	background: @table-bg-accent;
+	box-shadow: inset 0 1px 1px 0 @gray-lighter;
+	color: darken(@gray-light, 20%);
+	.font-size(@font-size-mini);
+}
+
+// Table caption
+caption {
+	margin-bottom: 10px;
+}

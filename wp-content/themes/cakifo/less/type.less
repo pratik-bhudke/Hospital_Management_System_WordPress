@@ -1,0 +1,210 @@
+/* =============================================================================
+   Typography:  Headings
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+	// Fix the character spacing for headings
+	text-rendering: optimizelegibility;
+}
+
+// Address variable `h1` font-size and margin within `section` and `article`
+// contexts in Firefox 4+, Safari 5, and Chrome.
+h1 {
+	margin: 0.67em 0;
+}
+
+h1, h2 {
+	.font-size(@headings-font-size);
+	letter-spacing: -1px;
+}
+
+h3 {
+	.font-size(@headings-size-medium);
+	color: @orange-dark;
+}
+
+h4 {
+	.font-size(@headings-size-small);
+}
+
+h5 {
+	.font-size(@headings-size-mini);
+}
+
+h6 {
+	#font > .shorthand(@headings-size-micro, normal);
+}
+
+/* Entry titles */
+.entry-title {
+	.font-size(@headings-size-large);
+	margin-bottom: 0;
+	word-wrap: break-word;
+}
+
+/* h3 headings in post content */
+.entry-content h3 {
+	background: lighten(@gray-lighter, 2.5%);
+	padding: 8px 10px;
+}
+
+/* Widget titles */
+.widget-title {
+	.widget-title-bar;
+	letter-spacing: -1px;
+
+	// Links
+	a {
+		color: @gray-dark;
+
+		&:hover { color: @link-color-hover; }
+	}
+}
+
+/* Section titles */
+.section-title {
+	.section-title-bar;
+	box-shadow:
+		0 0 0 3px fade(#fff, 90%),
+		-4px 0 3px fade(#000, 30%),
+		inset 0 1px 3px darken(@title-section-bg, 10%);
+
+	a {
+		display: block;
+		color: #fff;
+
+		&:hover {
+			color: @gray-lighter;
+		}
+	}
+}
+
+/* =============================================================================
+   Typography:  Lists
+   ========================================================================== */
+
+li {
+	line-height: ( @line-height-base * 1.25 );
+}
+
+// Ordered lists
+ol ol {
+	list-style: upper-roman;
+}
+
+ol ol ol {
+	list-style: lower-roman;
+}
+
+ol ol ol ol {
+	list-style: upper-alpha;
+}
+
+ol ol ol ol ol {
+	list-style: lower-alpha;
+}
+
+// Definition lists
+dt {
+	font-weight: bold;
+}
+
+/* =============================================================================
+   Typography:  Code
+   ========================================================================== */
+
+/**
+ * Corrects font family set oddly in Safari 5 and Chrome.
+ */
+code, kbd, pre, samp {
+	#font > .monospace(@font-size-base, normal);
+}
+
+/**
+ * Inline code
+ */
+code {
+	color: @green;
+}
+
+/**
+ * Blocks of code
+ */
+pre {
+	overflow: auto;
+	padding: @gutter-width-small;
+	background: lighten(@gray-dark, 6%);
+	border-radius: 5px;
+	color: #fff;
+	white-space: pre-wrap; // Improves readability of pre-formatted text
+
+	code {
+		color: #fff;
+	}
+}
+
+/* =============================================================================
+   Typography:  HTML elements
+   ========================================================================== */
+
+// Address styling not present in IE 8/9, Safari 5, and Chrome.
+abbr[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+acronym {
+	border-bottom: 1px dashed @gray;
+	text-transform: uppercase;
+	cursor: help;
+}
+
+// Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+b,
+strong {
+	font-weight: bold;
+}
+
+// Address styling not present in Safari 5 and Chrome.
+dfn {
+  font-style: italic;
+}
+
+// Horizontal rule
+hr {
+	display: block;
+	clear: both;
+	border: 0;
+	height: 0;
+	padding: 0;
+	margin: @gutter-width-small 0;
+	border-bottom: 4px double @gray-lighter;
+}
+
+// Address styling not present in IE 8/9.
+mark, ins {
+	background: #fff9c0;
+	color: #000;
+}
+
+// Address inconsistent and variable font size in all browsers.
+small {
+    font-size: 80%;
+}
+
+// Prevent `sub` and `sup` affecting `line-height` in all browsers.
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}

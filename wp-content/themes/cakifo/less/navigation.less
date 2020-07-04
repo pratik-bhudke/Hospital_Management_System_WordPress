@@ -1,0 +1,377 @@
+/* =============================================================================
+   Layout:  Topbar
+   ========================================================================== */
+
+.topbar {
+	position: relative;
+	width: 100%;
+	min-height: @topbar-height;
+	background: @topbar-bg url(images/topbar.png) repeat; // The noise image is transparent
+	color: @topbar-color;
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -11px;
+		left: 0;
+		.size(100%, 10px);
+		background: url(images/topbar-bottom.png) repeat-x;
+	}
+}
+
+/* =============================================================================
+   Layout:  Primary navigation
+   ========================================================================== */
+
+.main-navigation {
+	position: relative;
+	width: @width-site;
+	padding: 0 @gutter-width 0 (@gutter-width - 15px); // 15px is the padding-left on .menu-item a {}
+	margin: 0 auto;
+	.clearfix();
+
+	.menu,
+	.menu ul {
+		.no-list-style();
+	}
+
+	.menu-item {
+		position: relative;
+		float: left;
+	}
+
+	.menu-item > a {
+		display: inline-block;
+		padding: 20px 15px;
+		color: @topbar-color;
+		#font > .shorthand(@font-size-medium, bold, normal);
+		text-shadow: 1px 1px 0 darken(@topbar-color, 70%);
+		.transition(all 150ms);
+	}
+
+	.menu-item > a:hover,
+	.menu-item > a:focus,
+	.current-menu-item > a,
+	.current-menu-ancestor > a {
+		background-color: lighten(@topbar-bg, 12%);
+		#gradient > .vertical(fade(#fff, 0%), fade(#fff, 20%));
+		color: lighten(@topbar-color, 14%);
+	}
+
+	.menu-item > a:active {
+		background: lighten(@topbar-bg, 8%);
+	}
+
+	.sep {
+		color: darken(@topbar-color, 20%);
+	}
+
+	.sub-menu .sep,
+	.menu-item:last-of-type .sep {
+		display: none;
+	}
+
+	/* Level 2 */
+	.sub-menu {
+		display: none;
+		position: absolute;
+		z-index: 500;
+		top: 100%;
+		left: 0;
+		min-width: 200px;
+		background: @topbar-bg url(images/topbar.png) repeat;
+		border-radius: 0 0 5px 5px;
+		box-shadow: 1px 2px 2px fade(#000, 30%);
+
+		.menu-item {
+			float: none;
+		}
+
+		.menu-item > a {
+			width: 100%;
+			border-top: 1px solid lighten(@topbar-bg, 10%);
+			border-bottom: 1px solid darken(@topbar-bg, 10%);
+		}
+
+		.menu-item:first-of-type > a {
+			border-top: none;
+		}
+
+		.menu-item:last-of-type > a {
+			border-bottom: none;
+		}
+
+		// Level n
+		.sub-menu {
+			top: 0;
+			left: 100%;
+			border-radius: 0 5px 5px 0;
+		}
+	}
+
+	// Display the sub menus on hover
+	.menu-item:hover > .sub-menu {
+		display: block;
+	}
+
+	// Toggle button
+	.toggle-button();
+}
+
+// =============================================================================
+// Secondary Navigation
+// =============================================================================
+
+.secondary-navigation {
+	#gradient > .vertical(fade(#fff, 20%), fade(#fff, 50%));
+	border-radius: 5px 5px 0 0;
+
+	.no-rgba & {
+		background-color: #f8fafb;
+	}
+
+	ul {
+		.no-list-style();
+	}
+
+	.menu {
+		.clearfix();
+		margin-left: @gutter-width-small;
+	}
+
+	.menu-item {
+		position: relative;
+		float: left;
+		.font-size(@font-size-small);
+	}
+
+	.menu-item > a {
+		display: inline-block;
+		padding: 14px 20px;
+		color: darken(@gray, 5%);
+		text-transform: uppercase;
+
+		&:hover {
+			background-color: #fff;
+			background-color: fade(#fff, 53%);
+			color: @link-color-hover;
+		}
+	}
+
+	.current-menu-item > a,
+	.current-menu-ancestor > a {
+		font-weight: bold;
+		color: @gray-darker;
+	}
+
+	// Separator
+	.sep {
+		color: @gray-light;
+	}
+
+	.sub-menu .sep,
+	.menu-item:last-of-type .sep {
+		display: none;
+	}
+
+	// Level two
+	.sub-menu {
+		display: none;
+		position: absolute;
+		z-index: 500;
+		top: 100%;
+		left: 0;
+		min-width: 200px;
+		box-shadow: 1px 1px 2px fade(#000, 25%);
+
+		.menu-item {
+			float: none;
+		}
+
+		a {
+			display: block;
+			// width: 100%;
+			padding: 10px 12px;
+			border-bottom: 1px solid lighten(@gray-dark, 10%);
+			.font-size(@font-size-small);
+			background: @gray-darker;
+			color: @gray-lighter;
+			text-transform: none;
+			white-space: normal;
+
+			&:hover {
+				background: darken(@gray-darker, 13%);
+			}
+		}
+
+		.menu-item:last-of-type > a {
+			border-bottom: none;
+		}
+
+		// Level n
+		.sub-menu {
+			top: 0;
+			left: 100%;
+		}
+	}
+
+	// Display the sub menu on hover
+	.menu-item:hover > ul {
+		display: block;
+	}
+
+	// Toggle button
+	.toggle-button( darken( #fff, 1% ), darken( #fff, 5% ) );
+}
+
+// =============================================================================
+// Navigation for screens < 980px
+// =============================================================================
+
+@media screen and (max-width: 979px) {
+
+	.main-navigation,
+	.secondary-navigation {
+		padding: 0;
+
+		.menu-toggle {
+			display: block;
+		}
+
+		.menu-list-container,
+		.search-form {
+			display: none;
+		}
+
+		/* Menu is toggled on */
+		&.toggled-on .menu-list-container,
+		&.toggled-on .search-form {
+			display: block;
+		}
+
+		.menu-list-container {
+			padding: @gutter-width;
+		}
+
+		.menu-item {
+			float: none;
+		}
+
+		.menu-item > a {
+			width: 100%;
+			border-top: 1px solid;
+			border-bottom: 1px solid;
+		}
+
+		.menu-item:first-of-type > a {
+			border-top: none;
+		}
+
+		.menu-item:last-of-type > a {
+			border-bottom: none;
+		}
+
+		.sep {
+			display: none;
+		}
+
+		// Sub-menu
+		ul.sub-menu {
+			display: block;
+			position: static;
+			list-style-type: disc;
+
+			box-shadow: none;
+			margin-left: @gutter-width;
+
+			.menu-item {
+
+			}
+		}
+	}
+
+	.main-navigation {
+		.menu-item > a {
+			border-top-color: lighten(@topbar-bg, 10%);
+			border-bottom-color: darken(@topbar-bg, 10%);
+		}
+	}
+
+	.secondary-navigation {
+		background: #fff;
+
+		.menu-item > a {
+			background: #fff;
+			border-top: #fff;
+			border-bottom-color: darken(#fff, 10%);
+			color: darken(@gray, 5%);
+		}
+
+		.menu-item > a:hover {
+			background-color: darken(#fff, 10%);
+		}
+	}
+
+} // Media query: max-width 979px;
+
+// =============================================================================
+// Search form in the topbar
+// =============================================================================
+
+.main-navigation .search-form {
+	float: right;
+	margin-top: 10px;
+
+	label {
+		margin: 0;
+	}
+
+	.search-field {
+		margin-bottom: 0;
+		background-color: @gray;
+		background-color: fade(#fff, 30%);
+		border: 1px solid #000;
+		box-shadow:
+			inset 0 1px 2px fade(#000, 10%),
+			0 1px 0px fade(#fff, 30%);
+		color: #fff;
+		color: fade(#fff, 80%);
+
+		// Give the input placeholder a lighter colour
+		.placeholder( lighten(@gray-light, 15%), -1px -1px 0 fade(#000, 30%) );
+	}
+
+	.search-submit {
+		display: none;
+		padding: 2px 14px;
+		border-color: #000;
+		margin-left: 5px;
+	}
+}
+
+@media screen and (max-width: 979px) {
+	.main-navigation .search-form {
+		float: none;
+		padding: @gutter-width-small @gutter-width;
+		margin-top: (-@gutter-width-small);
+		border: solid @topbar-search-border;
+		border-width: 1px 0;
+		box-shadow:
+			inset 0 1px 0 fade(#fff, 10%),
+			0 1px 0 fade(#fff, 10%);
+
+		.search-submit {
+			display: inline-block;
+		}
+	}
+}
+
+/* No JS: show the menu */
+.no-js .site-navigation .menu-list-container,
+.no-js .site-navigation .search-form {
+	display: block;
+}
+
+.no-js .menu-toggle {
+	display: none;
+}

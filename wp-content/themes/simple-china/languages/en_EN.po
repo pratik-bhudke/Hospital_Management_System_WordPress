@@ -1,0 +1,181 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: china-theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-11 11:33+0600\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../comments.php:6
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "This post is password protected. Enter the password to view comments."
+
+#: ../comments.php:15
+msgid "Comments:"
+msgstr "Comments:"
+
+#: ../comments.php:23
+msgid "Says:"
+msgstr "Says:"
+
+#: ../comments.php:43
+msgid "Your comment is awaiting moderation."
+msgstr "Your comment is awaiting moderation."
+
+#: ../comments.php:45
+msgid "at"
+msgstr "at"
+
+#: ../comments.php:45
+msgid "edit"
+msgstr "edit"
+
+#: ../comments.php:71
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: ../comments.php:81
+msgid "Add comments:"
+msgstr "Add comments:"
+
+#: ../comments.php:88
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "You must be <a href=\"%s\">logged in</a> to post a comment."
+
+#: ../comments.php:95
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "Logged in as <a href=\"%1$s\">%2$s</a>."
+
+#: ../comments.php:95
+msgid "Log out of this account"
+msgstr "Log out"
+
+#: ../comments.php:95
+msgid "Log out &raquo;"
+msgstr "Log out &raquo;"
+
+#: ../comments.php:100
+msgid "Name"
+msgstr "Name"
+
+#: ../comments.php:100 ../comments.php:103
+msgid "(required)"
+msgstr "(required)"
+
+#: ../comments.php:103
+msgid "Mail (will not be published)"
+msgstr "Mail (will not be published)"
+
+#: ../comments.php:106
+msgid "Website"
+msgstr "Website"
+
+#: ../comments.php:110
+#, php-format
+msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
+msgstr "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
+
+#: ../comments.php:114
+msgid "Submit Comment"
+msgstr "Submit Comment"
+
+#: ../footer.php:2
+msgid "Copyright information"
+msgstr ""
+"Designed by <a href=\"http://www.alexander-tumanov.name/\">TumanoB</a>."
+
+#: ../functions.php:42
+msgid "Top primary menu"
+msgstr ""
+
+#: ../functions.php:43
+msgid "Secondary menu located on bottom of the page"
+msgstr ""
+
+#: ../header.php:39
+#, php-format
+msgid "%s RSS Feed"
+msgstr "%s RSS Feed"
+
+#: ../index.php:21 ../single.php:21
+#, fuzzy
+msgid "Tags:"
+msgstr "Says:"
+
+#: ../index.php:22
+msgid "Author:"
+msgstr "Author:"
+
+#: ../index.php:23
+msgid "Category:"
+msgstr "Category:"
+
+#: ../index.php:34 ../single.php:31
+msgid "&laquo; Older Entries"
+msgstr "&laquo; Older Entries"
+
+#: ../index.php:35 ../single.php:32
+msgid "Newer Entries &raquo;"
+msgstr "Newer Entries &raquo;"
+
+#: ../sidebar.php:5
+msgid "Pages"
+msgstr "Pages"
+
+#: ../sidebar.php:12
+msgid "Categories"
+msgstr "Categories"
+
+#: ../sidebar.php:19
+msgid "Links"
+msgstr "Links"
+
+#~ msgid ""
+#~ "Designed by <a href=\"http://www.alexander-tumanov.name/\">TumanoB</a>. "
+#~ "Powered by <a href=\"#\">WordPress</a>"
+#~ msgstr ""
+#~ "Designed by <a href=\"http://www.alexander-tumanov.name/\">TumanoB</a>. "
+#~ "Powered by <a href=\"http://wordpress.org/\">WordPress</a>"
+
+#~ msgid ""
+#~ "China blog is proudly using the <a href=\"#\">KitaiTorg theme</a> "
+#~ "originally designed by <a href=\"#\">KitaiTorg.ru</a>. Powered by <a href="
+#~ "\"#\">WordPress</a>"
+#~ msgstr ""
+#~ "Designed by<a href=\"http://www.kitaitorg.ru/en/\">KitaiTorg.ru</a>. "
+#~ "Powered by <a href=\"http://wordpress.org\">WordPress</a>"
+
+#~ msgid "ChinaBlog - Blogs about China"
+#~ msgstr "ЧайнаБлог - Блог о Китае"
+
+#~ msgid "Home"
+#~ msgstr "Домой"
+
+#~ msgid "About"
+#~ msgstr "О блоге"
+
+#~ msgid "Elements"
+#~ msgstr "Элементы"
+
+#~ msgid "Products"
+#~ msgstr "Продукты"
+
+#~ msgid "Contact"
+#~ msgstr "Контакт"
+
+#~ msgid "One Response"
+#~ msgstr "Один комментарий"
+
+#~ msgid "to"
+#~ msgstr "на"

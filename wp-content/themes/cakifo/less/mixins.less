@@ -1,0 +1,497 @@
+// =============================================================================
+// Mixins
+// =============================================================================
+
+// Calculate font size in rems
+.font-size(@font-size: @font-size-base) {
+	@rem: (@font-size / 10);
+	font-size: (@font-size * 1px);
+	font-size: unit(@rem, rem);
+}
+
+// Widget title bar
+// -------------------------
+.widget-title-bar(@radius: 50px 30px) {
+	#gradient > .vertical(lighten(@title-widget-bg, 5%), @title-widget-bg);
+	border: 1px solid darken(@title-widget-bg, 2%);
+	border-bottom-color: darken(@title-widget-bg, 5%);
+	border-radius: @radius;
+	color: @gray-dark;
+	.font-size(18);
+	margin: 0 0 @gutter-width-small;
+	padding: 8px 20px;
+	text-shadow: 0 1px 0 #fff;
+}
+
+// Section title bar
+// -------------------------
+.section-title-bar(@radius: 30px, @space: 60px) {
+	#gradient > .vertical(@title-section-bg, darken(@title-section-bg, 4%));
+	border-radius: @radius;
+	color: #fff;
+	.font-size(24);
+	margin: 0 0 @gutter-width (-@space);
+	padding: 10px @space;
+	text-shadow: 1px 1px 0 darken(@title-section-bg, 14%);
+}
+
+// Menu toggle button
+// -------------------------
+.toggle-button( @bg-color: @gray, @bg-secondary-color: darken( @gray, 6% ) ) {
+	.menu-toggle {
+		display: none;
+
+		#gradient > .vertical( @bg-color, @bg-secondary-color );
+		border-bottom: 1px solid @bg-color;
+		box-shadow: 0 1px 0 fade( #fff, 10% );
+		color: contrast( @bg-color, darken( @gray, 6% ));
+
+		width: 100%;
+		padding: 15px 0;
+		margin: 0;
+
+		#font > .shorthand(21, bold);
+		text-align: center;
+		cursor: pointer;
+
+		&:hover {
+			background: @gray-dark;
+			color: #fff;
+		}
+
+		&:active,
+		&:focus {
+			background: @gray-darker;
+		}
+	}
+}
+
+// Blue box
+// @todo Combine with .highlight-box()
+// -------------------------
+.blue-box(@padding: 10px @gutter-width-small, @margin: 0 0 @gutter-width, @border-width: 4px 0) {
+	background-color: @highlight-bg;
+	border: double desaturate(darken(@highlight-bg, 15%), 40%); ;
+	border-width: @border-width;
+	margin: @margin;
+	padding: @padding;
+}
+
+// Highlight box
+// -------------------------
+.highlight-box(@padding: 10px @gutter-width-small, @margin: 0 0 @gutter-width, @border-width: 4px 0) {
+	background-color: @highlight-bg-secondary;
+	border: double spin(desaturate(darken(#ffffdf, 10%), 40), -21); // use variable
+	border-width: @border-width;
+	margin: @margin;
+	padding: @padding;
+}
+
+// Sizing shortcuts
+// -------------------------
+.size(@width, @height) {
+	width: @width;
+	height: @height;
+}
+
+.square(@size) {
+	.size(@size, @size);
+}
+
+// Webkit-style focus
+// ------------------
+.tab-focus() {
+	// Default
+	outline: thin dotted @gray-dark;
+	// Webkit
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+// Remove margin, padding and list styles
+// ------------------
+.no-list-style() {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+// Selection text
+// -------------------------
+.text-selection() {
+	&::-moz-selection {
+		background-color: @color-selection;
+		color: @color-selection-text;
+		text-shadow: none;
+	}
+	&::selection {
+		background-color: @color-selection;
+		color: @color-selection-text;
+		text-shadow: none;
+	}
+}
+
+// Placeholder text
+// -------------------------
+.placeholder(@color, @text-shadow: none) {
+	&::-moz-placeholder {
+		color: @color;
+		text-shadow: @text-shadow;
+	}
+	&:-ms-input-placeholder {
+		color: @color;
+		text-shadow: @text-shadow;
+	}
+	&::-webkit-input-placeholder {
+		color: @color;
+		text-shadow: @text-shadow;
+	}
+}
+
+// Buttons
+// -------------------------
+
+.btn-pseudo-states(@background, @secondary, @color) {
+	#gradient > .vertical(@background, @secondary);
+	border-color:
+		darken(@secondary, 8%)
+		darken(@secondary, 8%)
+		darken(@secondary, 20%);
+	color: @color;
+	text-shadow: 0 1px 0 fade(contrast(@color), 50%); // Use the opposite color of @color
+
+	&:hover,
+	&:focus {
+		#gradient > .vertical(darken(@background, 5%), darken(@secondary, 8%));
+		border-color:
+			darken(@secondary, 15%)
+			darken(@secondary, 15%)
+			darken(@secondary, 30%);
+		color: @color;
+		text-decoration: none;
+	}
+}
+
+// Labels
+// --------------------------------------------------
+
+.label-variant(@color: @gray-lighter) {
+	background-color: @color;
+	border-radius: 3px;
+	color: darken(@color, 50%);
+	.font-size(@font-size-micro);
+	padding: 3px 10px;
+	text-transform: uppercase;
+
+	&[href] {
+		&:hover,
+		&:focus {
+			background-color: @link-color-hover;
+			color: #fff;
+		}
+	}
+}
+
+// Fonts
+// --------------------------------------------------
+
+#font {
+	#family {
+		.serif() {
+			font-family: @font-family-serif;
+		}
+
+		.sans-serif() {
+			font-family: @font-family-sans-serif;
+		}
+
+		.monospace() {
+			font-family: @font-family-monospace;
+		}
+	}
+
+	.shorthand(@size: @font-size-base, @weight: normal, @line-height: @line-height-base) {
+		.font-size(@size);
+		font-weight: @weight;
+		line-height: @line-height;
+	}
+
+	.serif(@size: @font-size-base, @weight: normal, @line-height: @line-height-base) {
+		#font > #family > .serif;
+		#font > .shorthand(@size, @weight, @line-height);
+	}
+
+	.sans-serif(@size: @font-size-base, @weight: normal, @line-height: @line-height-base) {
+		#font > #family > .sans-serif;
+		#font > .shorthand(@size, @weight, @line-height);
+	}
+
+	.monospace(@size: @font-size-base, @weight: normal, @line-height: @line-height-base) {
+		#font > #family > .monospace;
+		#font > .shorthand(@size, @weight, @line-height);
+	}
+}
+
+// Transitions
+// --------------------------------------------------
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+		  transition: @transition;
+}
+
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+          transition-delay: @transition-delay;
+}
+
+// Transformations
+// --------------------------------------------------
+
+.transform(@transform) {
+  -webkit-transform: @transform;
+	  -ms-transform: @transform;
+		  transform: @transform;
+}
+
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+	  -ms-transform: rotate(@degrees);
+		  transform: rotate(@degrees);
+}
+
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+ 	  -ms-transform: scale(@ratio);
+		  transform: scale(@ratio);
+}
+
+.translate(@x, @y) {
+  -webkit-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y);
+		  transform: translate(@x, @y);
+}
+
+.translate3d(@x, @y, @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+		  transform: translate3d(@x, @y, @z);
+}
+
+.skewX(@x) {
+  -webkit-transform: skewX(@x);
+	  -ms-transform: skewX(@x);
+		  transform: skewX(@x);
+}
+
+.skewY(@y) {
+  -webkit-transform: skewY(@y);
+	  -ms-transform: skewY(@y);
+		  transform: skewY(@y);
+}
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden`
+.backface-visibility(@visibility){
+	-webkit-backface-visibility: @visibility;
+			backface-visibility: @visibility;
+}
+
+// Box-sizing
+// --------------------------------------------------
+
+.box-sizing(@box-model) {
+  -webkit-box-sizing: @box-model;
+     -moz-box-sizing: @box-model;
+          box-sizing: @box-model;
+}
+
+// Columns
+// --------------------------------------------------
+
+.content-columns(@column-count, @column-gap: @gutter-width) {
+  -webkit-column-count: @column-count;
+     -moz-column-count: @column-count;
+          column-count: @column-count;
+    -webkit-column-gap: @column-gap;
+       -moz-column-gap: @column-gap;
+            column-gap: @column-gap;
+}
+
+// Column breaks
+
+// auto | avoid
+.content-columns-break-inside(@break: auto) {
+	-webkit-column-break-inside: @break;
+	-moz-column-break-inside: @break;
+	column-break-inside: @break;
+}
+
+// auto | always | avoid
+.content-columns-break-before(@break: auto) {
+	-webkit-column-break-before: @break;
+	-moz-column-break-before: @break;
+	column-break-before: @break;
+}
+
+// auto | always | avoid
+.content-columns-break-after(@break: auto) {
+	-webkit-column-break-after: @break;
+	-moz-column-break-after: @break;
+	column-break-after: @break;
+}
+
+// Hyphenation
+.hyphens(@mode: auto) {
+  word-wrap: break-word;
+  -webkit-hyphens: @mode;
+	 -moz-hyphens: @mode;
+	  -ms-hyphens: @mode;
+	   -o-hyphens: @mode;
+		  hyphens: @mode;
+}
+
+// CSS3 flexbox
+// http://css-tricks.com/old-flexbox-and-new-flexbox/
+// http://www.w3.org/TR/css3-flexbox
+// https://gist.github.com/jayj/4012969
+// --------------------------------------------------
+
+// flex or inline-flex
+.flex-display(@display: flex) {
+	display: ~"-webkit-@{display}";
+	display: ~"-moz-@{display}";
+	display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+	display: ~"-ms-@{display}"; // IE11
+	display: @display;
+}
+
+// <positive-number>, initial, auto, or none
+.flex(@columns: initial) {
+  -webkit-flex: @columns;
+     -moz-flex: @columns;
+      -ms-flex: @columns;
+          flex: @columns;
+}
+
+// row | row-reverse | column | column-reverse
+.flex-direction(@direction: row) {
+  -webkit-flex-direction: @direction;
+     -moz-flex-direction: @direction;
+      -ms-flex-direction: @direction;
+          flex-direction: @direction;
+}
+
+// nowrap | wrap | wrap-reverse
+.flex-wrap(@wrap: nowrap) {
+  -webkit-flex-wrap: @wrap;
+     -moz-flex-wrap: @wrap;
+      -ms-flex-wrap: @wrap;
+          flex-wrap: @wrap;
+}
+
+// <flex-direction> || <flex-wrap>
+.flex-flow(@flow) {
+  -webkit-flex-flow: @flow;
+     -moz-flex-flow: @flow;
+      -ms-flex-flow: @flow;
+          flex-flow: @flow;
+}
+
+// <integer>
+.flex-order(@order: 0) {
+ -ms-flex-order: @order;
+  -webkit-order: @order;
+     -moz-order: @order;
+      -ms-order: @order;
+          order: @order;
+}
+
+// <number>
+.flex-grow(@grow: 0) {
+  -webkit-flex-grow: @grow;
+     -moz-flex-grow: @grow;
+      -ms-flex-grow: @grow;
+          flex-grow: @grow;
+}
+
+// <number>
+.flex-shrink(@shrink: 1) {
+  -webkit-flex-shrink: @shrink;
+     -moz-flex-shrink: @shrink;
+      -ms-flex-shrink: @shrink;
+          flex-shrink: @shrink;
+}
+
+// <width>
+.flex-basis(@width: auto) {
+  -webkit-flex-basis: @width;
+     -moz-flex-basis: @width;
+      -ms-flex-basis: @width;
+          flex-basis: @width;
+}
+
+// flex-start | flex-end | center | space-between | space-around
+.justify-content(@justify: flex-start) {
+  -webkit-justify-content: @justify;
+     -moz-justify-content: @justify;
+      -ms-justify-content: @justify;
+          justify-content: @justify;
+}
+
+// flex-start | flex-end | center | space-between | space-around | stretch
+.align-content(@align: stretch) {
+  -webkit-align-content: @align;
+     -moz-align-content: @align;
+      -ms-align-content: @align;
+          align-content: @align;
+}
+
+// flex-start | flex-end | center | baseline | stretch
+.align-items(@align: stretch) {
+  -webkit-align-items: @align;
+     -moz-align-items: @align;
+      -ms-align-items: @align;
+          align-items: @align;
+}
+
+// auto | flex-start | flex-end | center | baseline | stretch
+.align-self(@align: auto) {
+  -webkit-align-self: @align;
+     -moz-align-self: @align;
+      -ms-align-self: @align;
+          align-self: @align;
+}
+
+// Gradients
+// --------------------------------------------------
+#gradient {
+	.horizontal(@startColor: #555, @endColor: #333, @colorStop: 0%) {
+		background-color: @endColor;
+		background-image: -webkit-linear-gradient(left, @startColor @colorStop, @endColor);
+		background-image: linear-gradient(to right, @startColor @colorStop, @endColor);
+		background-repeat: repeat-x;
+	}
+
+	.vertical(@startColor: #555, @endColor: #333, @colorStop: 100%) {
+		background-color: mix(@startColor, @endColor, 60%);
+		background-image: -webkit-linear-gradient(top, @startColor, @endColor @colorStop);
+		background-image: linear-gradient(to bottom, @startColor, @endColor @colorStop);
+	}
+
+	.directional(@startColor: #555, @endColor: #333, @deg: 45deg) {
+		background-color: @endColor;
+		background-image: -webkit-linear-gradient(@deg, @startColor, @endColor);
+		background-image: linear-gradient(@deg, @startColor, @endColor);
+		background-repeat: repeat-x;
+	}
+
+	.radial(@innerColor: #555, @outerColor: #333, @shape: circle)  {
+		background-color: @outerColor;
+		background-image: -webkit-radial-gradient(@shape, @innerColor, @outerColor);
+		background-image:    -moz-radial-gradient(@shape, @innerColor, @outerColor);
+		background-image:      -o-radial-gradient(@shape, @innerColor, @outerColor);
+		background-image:         radial-gradient(@shape, @innerColor, @outerColor);
+		background-repeat: no-repeat;
+	}
+}

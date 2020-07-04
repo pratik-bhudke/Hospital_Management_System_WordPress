@@ -1,0 +1,66 @@
+/* =============================================================================
+   Typography:  Quotes
+   ========================================================================== */
+
+// Set consistent quote types.
+q {
+	quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Block quotes
+ */
+blockquote {
+	font-style: italic;
+	margin: 0 @gutter-width @gutter-width-small;
+
+	p {
+		color: #8c8c8c;
+		.font-size(19);
+	}
+
+	em, i, cite {
+		font-style: normal;
+	}
+
+	// Style aligned blockquotes as pull quotes
+	&.aligncenter,
+	&.alignleft,
+	&.alignright {
+		border-top: 1px solid darken(@gray-lighter, 3.5%);
+		border-bottom: 1px solid darken(@gray-lighter, 3.5%);
+		width: 50%;
+	}
+
+	&.alignleft {
+		margin: 10px @gutter-width 10px 0;
+	}
+
+	&.alignright {
+		margin: 10px 0 10px @gutter-width;
+		text-align: right;
+	}
+
+	&.aligncenter {
+		width: 100%;
+		margin-left: 0;
+		text-align: center;
+	}
+}
+
+/* Quote attributions */
+blockquote cite,
+.quote-caption {
+	display: block;
+	#font > .shorthand(@font-size-base, 400);
+	font-style: normal;
+	margin-top: @gutter-width-small;
+
+	&:before {
+		content: '\2014 \00A0';
+	}
+}
+
+blockquote + .quote-caption {
+	margin-left: @gutter-width;
+}

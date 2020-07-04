@@ -1,0 +1,635 @@
+/*
+ * Theme Name: Cakifo
+ * CSS for languages written in a Right To Left (RTL) direction
+ * http://codex.wordpress.org/Right_to_Left_Language_Support
+ */
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+pre {
+	direction: ltr;
+	text-align: left;
+}
+
+/**
+ * Images
+ */
+.thumbnail {
+	float: left;
+	margin: 0 25px 25px 0;
+}
+
+img.alignleft {
+	margin: 0 25px 12px 0;
+}
+
+img.alignright {
+	margin: 0 0 12px 25px;
+}
+
+.avatar {
+	float: right;
+	margin-left: 18px;
+	margin-right: auto;
+}
+
+/**
+ * Captions [caption]
+ */
+.wp-caption.alignright {
+	margin: 0 0 0 25px;
+}
+
+.wp-caption.alignleft {
+	margin: 0 25px 0 0;
+}
+
+/**
+ * Galleries
+ */
+.gallery-item {
+	float: right;
+}
+
+/**
+ * Tables
+ */
+caption,
+th,
+td {
+	text-align: right;
+}
+
+/**
+ * Main and secondary navigation
+ */
+.site-navigation .menu-item {
+	float: right;
+}
+
+.site-navigation .sub-menu {
+	right: 0;
+	left: auto;
+}
+
+.site-navigation .sub-menu .sub-menu {
+	right: 100%;
+	left: auto;
+}
+
+.main-navigation {
+	padding: 0 25px 0 40px;
+}
+
+.main-navigation .sub-menu .sub-menu {
+	border-radius: 5px 0 0 5px;
+}
+
+.main-navigation .search-form {
+	float: left;
+}
+
+@media screen and (max-width: 979px) {
+	.site-navigation {
+		padding: 0;
+	}
+
+	.site-navigation .menu-item,
+	.main-navigation .search-form {
+		float: none;
+	}
+
+	.site-navigation ul.sub-menu {
+		margin-right: 40px;
+		margin-left: auto;
+	}
+}
+
+/**
+ * Layout: Header
+ */
+.site-header .site-title {
+	float: right;
+	margin-right: 40px;
+	margin-left: auto;
+}
+
+.site-header .site-description {
+	float: left;
+	margin-right: auto;
+	margin-left: 40px;
+}
+
+/**
+ * Layout: Content
+ */
+.site-main {
+	float: right;
+}
+
+.sidebar-primary,
+.sidebar-secondary {
+	float: left;
+}
+
+.sidebar-secondary {
+	clear: left;
+}
+
+.section-title {
+	margin-right: -60px;
+	margin-left: 0;
+}
+
+.intro-post .post-edit-link {
+	left: 25px;
+	right: auto;
+}
+
+/**
+ * Layout: Footer
+ */
+.site-footer .copyright {
+	float: right;
+}
+
+.site-footer .credit {
+	float: left;
+	text-align: left;
+}
+
+/* Footer Widget Area */
+.sidebar-subsidiary.two-col .widget-area {
+	float: right;
+	margin-left: 4%;
+	margin-right: auto;
+}
+
+.sidebar-subsidiary.two-col .widget-area + .widget-area {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.sidebar-subsidiary.three-col .widget-area {
+	float: right;
+	margin-left: 3.5%;
+	margin-right: auto;
+}
+
+.sidebar-subsidiary.three-col .widget-area + .widget-area + .widget-area {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+/**
+ * Layout: Theme Layouts
+ */
+.layout-2c-r .site-main {
+	float: left;
+}
+
+.layout-2c-r .sidebar-primary,
+.layout-2c-r .sidebar-secondary {
+	float: right;
+	clear: right;
+	margin-right: -15px;
+	margin-left: auto;
+}
+
+/* Three columns, center */
+.layout-3c-c .site-main {
+	float: right;
+	margin-right: 250px;
+	margin-left: auto;
+}
+
+.layout-3c-c .sidebar-primary {
+	float: right;
+	margin-right: -765px;
+	margin-left: auto;
+}
+
+.layout-3c-c .sidebar-secondary {
+	float: left;
+	margin-left: -15px;
+	margin-right: auto;
+}
+
+/* Three columns, left */
+.layout-3c-l .site-main {
+	float: right;
+}
+
+.layout-3c-l .sidebar-primary,
+.layout-3c-l .sidebar-secondary {
+	float: right;
+	margin-right: 25px;
+	margin-left: auto;
+}
+
+.layout-3c-l .sidebar-primary {
+	margin-right: 40px;
+	margin-left: auto;
+}
+
+.layout-3c-l .sidebar-secondary {
+	margin-left: -15px;
+}
+
+/* Three columns, right */
+.layout-3c-r .site-main {
+	float: left;
+}
+
+.layout-3c-r .sidebar-primary,
+.layout-3c-r .sidebar-secondary {
+	float: right;
+	margin-left: 25px;
+}
+
+.layout-3c-r .sidebar-primary {
+	margin-right: -15px;
+	margin-left: auto;
+}
+
+/**
+ * Layout: Slider
+ */
+.cakifo-slider .flex-active-slide {
+	float: right !important;
+}
+
+.slide .thumbnail,
+.slide .slider-video {
+	float: right;
+	margin: 0 3px 3px 40px;
+}
+
+/* Control navigation */
+.flex-control-nav {
+	margin: 20px -60px 0 auto;
+}
+
+.flex-control-nav li {
+	margin: 0 7px 0 0;
+}
+
+.flex-control-nav li:first-child {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+/* Next/prev buttons */
+.flex-direction-nav a:after {
+	right: -2px;
+	left: auto;
+}
+
+.flex-direction-nav .flex-prev {
+	right: -25px;
+	left: auto;
+}
+
+.flex-direction-nav .flex-next {
+	left: -25px;
+	right: auto;
+}
+
+.flex-direction-nav .flex-next:after {
+	right: 1px;
+	left: auto;
+}
+
+/**
+ * Layout: Post formats
+ */
+.entry-header .post-format-link {
+	left: 0;
+	float: left;
+	right: auto;
+}
+
+/* Format: Chat */
+.chat-text {
+	padding-right: 25px;
+	padding-left: 0;
+}
+
+.no-speaker .chat-text {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/* Format: Link */
+.format-link .entry-title .meta-nav {
+	display: inline-block;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.format-link .entry-title:hover .meta-nav {
+	margin-right: 5px;
+	margin-left: auto;
+	-webkit-transition: margin-right 200ms ease-in-out;
+	-moz-transition: margin-right 200ms ease-in-out;
+	-ms-transition: margin-right 200ms ease-in-out;
+	transition: margin-right 200ms ease-in-out;
+}
+
+/* Format: Image */
+.format-image .entry-meta .entry-meta-col {
+	float: right;
+}
+
+/**
+ * Components: Recent Posts
+ */
+.recent-post {
+	float: right;
+	margin-left: 40px;
+	margin-right: auto;
+}
+
+.recent-post:last-of-type {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+/**
+ * Components: Headlines - Category lists
+ */
+.headline-list {
+	float: right;
+	margin: 0 0 40px 60px;
+}
+
+.headline-list:nth-child(2n) {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.headline-list:nth-child(2n+1) {
+	clear: right;
+}
+
+.headline-list .thumbnail {
+	float: right;
+	margin: 0 0 0 25px;
+}
+
+/**
+ * Layout: Attachment pages
+ */
+.image-info {
+	float: right;
+}
+
+.image-info dt {
+	float: right;
+	clear: right;
+	text-align: right;
+}
+
+.image-info dd {
+	float: left;
+	padding-left: 5px;
+	text-align: left;
+	padding-right: 0;
+}
+
+.image-gallery {
+	float: left;
+}
+
+/**
+ * Layout: 404 Error Page
+ */
+.not-found-widgets .widget {
+	float: right;
+	margin-left: 40px;
+	margin-right: auto;
+}
+
+.not-found-widgets .widget:nth-of-type(3n) {
+	margin-left: 0;
+}
+
+/**
+ * Components: Pagination
+ */
+.pagination a,
+.pagination > span {
+	margin-left: 2px;
+	margin-right: auto;
+}
+
+/* Prev and next post pagination */
+.post-pagination a[rel="prev"] {
+	float: right;
+}
+
+.post-pagination a[rel="next"] {
+	float: left;
+}
+
+/**
+ * Related Posts widget
+ */
+.related-posts .with-thumbnails .related-post {
+	float: right;
+	margin-left: 25px;
+	margin-right: auto;
+}
+
+.related-posts .with-thumbnails .related-post:nth-of-type(5n) {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+/**
+ * Layout: Comments
+ */
+.comment-list .children .comment-body {
+	border-right: 3px solid;
+	padding-right: 40px;
+	border-left: 0;
+	padding-left: 0;
+}
+
+.comment-list .children .depth-2 .comment-body {
+	border-right-color: #04648d;
+}
+
+.comment-list .children .depth-3 .comment-body {
+	border-right-color: #ce3000;
+}
+
+.comment-list .children .depth-4 .comment-body {
+	border-right-color: #008a2e;
+}
+
+.comment-list .children .depth-5 .comment-body {
+	border-right-color: #ea0863;
+}
+
+/**
+ * Comment form
+ */
+#cancel-comment-reply-link {
+	padding-right: 10px;
+	padding-left: 0;
+}
+
+.comment-form .form-author {
+	float: right;
+}
+
+.comment-form .form-email {
+	float: left;
+}
+
+/**
+ * Layout:  Search form
+ */
+.search-form label {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+.search-form .search-text[results] {
+	padding-right: 6px;
+	padding-left: 0;
+}
+
+/* Search form in the topbar */
+.main-navigation .search-form label {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.main-navigation .search-form .search-submit {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+/* =============================================================================
+   Media Queries:  Max-width 1130px
+   ========================================================================== */
+
+@media screen and (max-width: 1130px) {
+	.flex-direction-nav .flex-prev {
+		right: 40px;
+		left: auto;
+	}
+
+	.flex-direction-nav .flex-next {
+		left: 40px;
+		right: auto;
+	}
+}
+
+/* =============================================================================
+   Media Queries:  Max-width 1080px
+   ========================================================================== */
+
+@media screen and (max-width: 1080px) {
+	.section-title {
+		padding-right: 25px;
+		margin-right: 0;
+		padding-left: 0;
+		margin-left: 0;
+	}
+
+	.recent-post {
+		margin-left: 2%;
+		margin-right: auto;
+	}
+
+	.headline-list {
+		margin-left: 2%;
+		margin-right: auto;
+	}
+}
+
+/* =============================================================================
+   Media Queries:  Max-width 980px
+   ========================================================================== */
+
+@media screen and (max-width: 980px) {
+	.site-header .site-title {
+		margin-right: 25px;
+		margin-left: auto;
+	}
+
+	.site-header .site-description {
+		margin-left: 25px;
+		margin-right: auto;
+	}
+
+	.cakifo-slider {
+		margin-right: -40px;
+	}
+
+	.layout-3c-c .sidebar-secondary,
+	.layout-3c-r .sidebar-secondary,
+	.layout-3c-l .sidebar-secondary {
+		float: left;
+	}
+
+	.layout-3c-c .site-main,
+	.layout-3c-c .sidebar-primary,
+	.layout-3c-r .sidebar-primary,
+	.layout-3c-l .sidebar-secondary {
+		margin-right: 0;
+	}
+
+	.layout-3c-c .sidebar-secondary,
+	.layout-3c-r .sidebar-secondary {
+		margin-left: 0;
+	}
+
+	.recent-post {
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.recent-post .thumbnail {
+		float: right;
+		margin: 0 0 0 25px;
+	}
+}
+
+/* =============================================================================
+   Media Queries:  Max-width 768px
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+
+	.sidebar-primary {
+		float: right;
+	}
+
+	.sidebar-secondary {
+		float: left;
+	}
+
+	.slide .thumbnail {
+		margin-left: 25px;
+		margin-right: auto;
+	}
+
+	.sidebar-subsidiary.three-col .widget-area {
+		margin-left: 4%;
+		margin-right: auto;
+	}
+
+	.sidebar-subsidiary.three-col .widget-area + .widget-area {
+		margin-left: 0;
+		margin-right: auto;
+	}
+}
